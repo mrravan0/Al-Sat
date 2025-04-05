@@ -1,0 +1,97 @@
+@use '../../Scss-Sass/Helpers' as *;
+
+
+.advantages {
+    padding-block: rem(80);
+
+    &__wrapper,
+    &__top,
+    &__text,
+    &__left,
+    &__right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__wrapper {
+        row-gap: rem(80);
+    }
+
+    &__top {
+        row-gap: rem(40);
+    }
+
+    &__text {
+        row-gap: rem(24);
+        text-align: center;
+    }
+
+    &__subtitle {
+        @include fluid-text(calculate(24), (calculate(16)));
+        background: var(--linear-gradient);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 700;
+    }
+
+    &__title {
+        @include fluid-text(calculate(48), calculate(26));
+        font-weight: 700;
+    }
+
+    &__content {
+        display: flex;
+        gap: rem(50) rem(45);
+        padding: rem(65);
+        background-color: #EFF1FD;
+        border-radius: rem(25);
+
+        @include respond('max', $tablet) {
+            flex-direction: column;
+            padding-inline: rem(30);
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        gap: rem(50) rem(80);
+
+        @include respond('max', $tablet) {
+            flex-direction: column;
+        }
+    }
+
+    &__left {
+        max-width: rem(calculate(580));
+        row-gap: rem(30);
+
+        .advantages__text {
+            @include respond('min', $tablet) {
+                text-align: start;
+            }
+        }
+
+        @include respond('max', $tablet) {
+            max-width: none;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    &__right {
+        row-gap: rem(35);
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: rem(25);
+    }
+
+    &__pass {
+        @include fluid-text(calculate(20), calculate(14));
+        font-weight: 400;
+        line-height: 1.5;
+    }
+}

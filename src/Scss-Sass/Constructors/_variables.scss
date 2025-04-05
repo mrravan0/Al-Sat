@@ -1,0 +1,17 @@
+@use '../Helpers' as *;
+
+:root {
+    --color-dark: #1D2130;
+    --color-grey: #A5A6AC;
+    --color-light: #fff;
+    --color-violet: #E0E4FC;
+    --linear-gradient: linear-gradient(160deg, rgba(55, 63, 255, 1) 0%, rgba(58, 202, 248, 1) 100%);
+    --font-family: 'Averta', sans-serif;
+    --container-width: #{rem(1600)};
+    --container-padding-X: #{rem(20)};
+    --transition-duration: .4s;
+
+    @include respond('max', $laptop) {
+        --container-width: #{rem(1280)};
+    }
+}

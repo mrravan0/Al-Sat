@@ -1,0 +1,33 @@
+@use '../../Scss-Sass/Helpers' as *;
+
+.advantages {
+    &__image {
+        width: rem(40);
+        height: rem(40);
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: rem(calculate(360));
+        width: 100%;
+        row-gap: rem(25);
+
+        @include respond('max', $tablet) {
+            max-width: none;
+            align-items: center;
+            text-align: center;
+        }
+
+        &-title {
+            @include fluid-text(calculate(32), calculate(20));
+        }
+
+        &-subtitle {
+            @include fluid-text(calculate(16), calculate(12));
+            font-weight: 400;
+            line-height: 1.5;
+        }
+    }
+}

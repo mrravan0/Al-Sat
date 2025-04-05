@@ -1,0 +1,15 @@
+@use '../../Scss-Sass/Helpers' as *;
+
+.formInput {
+    @include fluid-text(calculate(16), calculate(13));
+    border: none;
+    outline: none;
+    border-radius: rem(8);
+    background-color: var(--color-light);
+    padding: rem(20) rem(24);
+    width: 100%;
+
+    &::placeholder {
+        color: rgb(74, 78, 89);
+    }
+}

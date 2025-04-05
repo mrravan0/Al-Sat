@@ -1,0 +1,31 @@
+@use '../../Scss-Sass/Helpers' as *;
+
+.hero {
+    text-align: center;
+    padding-block: rem(100) rem(80);
+
+    &__wrapper {
+        display: flex;
+        max-width: rem(calculate(770));
+        width: 100%;
+        flex-direction: column;
+        row-gap: rem(50);
+        margin-inline: auto;
+    }
+
+    &__texts {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(35);
+    }
+
+    &__title {
+        @include fluid-text(calculate(56), calculate(25));
+        font-weight: 700;
+    }
+
+    &__description {
+        @include fluid-text(calculate(18), calculate(13));
+        line-height: 1.5;
+    }
+}

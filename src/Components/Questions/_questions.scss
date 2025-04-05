@@ -1,0 +1,51 @@
+@use '../../Scss-Sass/Helpers' as *;
+
+.questions {
+    padding-block: rem(135);
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: minmax(0, rem(calculate(400))) 1fr;
+        column-gap: 1rem;
+        padding: rem(64);
+        background-color: rgba(240, 242, 254, 1);
+        border-radius: rem(24);
+
+        @include respond('max', $laptop) {
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(50);
+        }
+
+        @include respond('max', $mobile) {
+            padding: rem(32);
+        }
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(30);
+
+        @include respond('max', $laptop) {
+            text-align: center;
+        }
+    }
+
+    &__title {
+        @include fluid-text(calculate(48), calculate(35));
+        line-height: 1.2;
+        font-weight: 700;
+    }
+
+    &__description {
+        @include fluid-text(calculate(16), calculate(13));
+        font-weight: 400;
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(16);
+    }
+}

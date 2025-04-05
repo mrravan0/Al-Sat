@@ -1,0 +1,69 @@
+@use '../../Scss-Sass/Helpers' as *;
+
+.details {
+    --logoRotate: 90deg;
+    display: flex;
+    flex-direction: column;
+    padding: rem(40);
+    border-radius: rem(24);
+    user-select: none;
+    cursor: pointer;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    transition-duration: var(--transition-duration);
+
+    @include respond('max', $mobile-s) {
+        padding: rem(20);
+    }
+
+    &[open] {
+        --logoRotate: 0deg;
+    }
+
+
+    &__summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include respond('min', $mobile) {
+            column-gap: rem(50);
+        }
+    }
+
+    &__logo {
+        @include square(rem(45));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        aspect-ratio: 1;
+        background-color: inherit;
+        flex-shrink: 1;
+
+        &::before,
+        &::after {
+            @include abs-center;
+            content: '';
+            width: 50%;
+            height: 10%;
+            background-color: var(--color-dark);
+        }
+
+        &::after {
+            rotate: var(--logoRotate);
+            transition-duration: var(--transition-duration);
+        }
+    }
+
+    &__title {
+        @include fluid-text(calculate(24), calculate(13));
+        font-weight: 700;
+    }
+
+    &__description {
+        font-weight: 400;
+        line-height: 1.5;
+        margin-top: rem(20);
+    }
+}

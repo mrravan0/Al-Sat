@@ -1,0 +1,55 @@
+@use '../../Scss-Sass/Helpers' as *;
+
+.comment {
+    padding-bottom: rem(80);
+
+    &__content {
+        display: flex;
+        gap: rem(40) rem(25);
+
+        @include respond('max', $tablet) {
+            flex-direction: column;
+        }
+
+        .advantages {
+            &__card {
+                border: rem(2) solid rgba(97, 153, 237, 0.26);
+                padding: rem(64);
+                border-radius: rem(25);
+                align-items: center;
+                text-align: center;
+
+                @include respond('max', $laptop) {
+                    padding: rem(35);
+                }
+
+                &-subtitle {
+                    font-weight: 600;
+                }
+
+                &-group {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: rem(10);
+                    order: 3;
+                    font-weight: 400;
+                }
+
+                &-title {
+                    @include fluid-text(calculate(20), calculate(14));
+                    font-weight: 400;
+                }
+            }
+
+            &__image {
+                order: 2;
+                width: rem(60);
+                height: rem(60);
+            }
+        }
+    }
+
+    &__title {
+        @include fluid-text(calculate(56), calculate(26))
+    }
+}

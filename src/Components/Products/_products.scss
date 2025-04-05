@@ -1,0 +1,44 @@
+@use '../../Scss-Sass/Helpers' as *;
+
+.products {
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: rem(40);
+
+        .button {
+            border-radius: rem(12);
+        }
+    }
+
+    &__cards {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+        gap: rem(45) rem(35);
+
+        @include respond('max', $tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include respond('max', $mobile) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+
+        @include respond('max', $mobile-s) {
+            grid-template-columns: none;
+            justify-content: center;
+        }
+
+        .card {
+            @include respond('max', $mobile) {
+                &:nth-child(3n) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

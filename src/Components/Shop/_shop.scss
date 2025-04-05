@@ -1,0 +1,14 @@
+@use '../../Scss-Sass/Helpers' as *;
+
+.advantages {
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-inline: auto;
+        max-width: rem(calculate(850));
+        width: 100%;
+        row-gap: rem(35);
+        padding-bottom: rem(80);
+    }
+}

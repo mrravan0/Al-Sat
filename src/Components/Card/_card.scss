@@ -1,0 +1,40 @@
+@use '../../Scss-Sass/Helpers' as *;
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: rem(calculate(300));
+    width: 100%;
+    background-color: #F3F4FE;
+    border-radius: rem(15);
+    cursor: pointer;
+
+    @include hover {
+        transform: scale(1.05);
+        transition-duration: var(--transition-duration);
+    }
+
+    @include respond('max', $mobile-s) {
+        width: 90vw;
+    }
+
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        padding: rem(18) rem(20);
+        row-gap: rem(10);
+    }
+
+    &__price,
+    &__name {
+        @include fluid-text(calculate(18), calculate(13));
+        font-weight: 700;
+    }
+
+    &__date {
+        @include fluid-text(calculate(14), calculate(8));
+        font-weight: 400;
+    }
+}

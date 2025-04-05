@@ -1,0 +1,131 @@
+@use '../../Scss-Sass/Helpers' as *;
+
+.message {
+    padding-block: rem(190) rem(80);
+
+    @include respond('max', $mobile-s) {
+        padding-top: rem(80);
+    }
+
+    &__wrapper,
+    &__left,
+    &__text,
+    &__form,
+    &__right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__wrapper {
+        row-gap: rem(65);
+    }
+
+    &__title {
+        @include fluid-text(calculate(56), calculate(25));
+        font-weight: 700;
+        text-align: center;
+    }
+
+    &__content {
+        padding: rem(65);
+        display: grid;
+        grid-template-columns: 1fr minmax(0, rem(calculate(350)));
+        align-items: center;
+        column-gap: rem(100);
+        background-color: rgba(240, 242, 254, 1);
+
+        @include respond('max', $laptop) {
+            column-gap: rem(50);
+            grid-template-columns: 1fr minmax(0, rem(calculate(250)));
+        }
+
+        @include respond('max', $tablet) {
+            column-gap: rem(20);
+            grid-template-columns: 1fr minmax(0, rem(calculate(200)));
+        }
+
+        @include respond('max', $mobile) {
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(50);
+        }
+
+        @include respond('max', $mobile-s) {
+            padding: rem(30);
+        }
+    }
+
+    &__left {
+        row-gap: rem(50);
+        width: 100%;
+    }
+
+    &__text {
+        row-gap: rem(16);
+    }
+
+    &__subTitle {
+        @include fluid-text(calculate(36), calculate(20));
+        font-weight: 700;
+    }
+
+    &__description {
+        @include fluid-text(calculate(18), calculate(13));
+        font-weight: 400;
+    }
+
+    &__form {
+        row-gap: rem(16);
+    }
+
+    &__name {
+        display: flex;
+        column-gap: rem(16);
+    }
+
+    &__textArea {
+        @include fluid-text(calculate(16), calculate(13));
+        resize: vertical;
+        padding: rem(20) rem(24);
+        border: none;
+        outline: none;
+        border-radius: rem(8);
+    }
+
+    &__right {
+        row-gap: rem(35);
+        align-items: center;
+        width: 100%;
+
+        @include respond('max', $mobile-s) {
+            align-items: flex-start;
+        }
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: rem(25);
+
+        @include respond('max', $mobile-s) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__number {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(5);
+
+        &-info {
+            @include fluid-text(calculate(24), calculate(15));
+            font-weight: 700;
+        }
+
+        &-instrument {
+            @include fluid-text(calculate(16), calculate(13));
+            font-weight: 400;
+        }
+    }
+}

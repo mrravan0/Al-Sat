@@ -1,0 +1,157 @@
+@use '../../Scss-Sass/Helpers' as *;
+
+.footer {
+    padding-block: rem(65);
+    background-color: var(--color-dark);
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(75);
+    }
+
+    &__top {
+        display: flex;
+
+        @include respond('max', $laptop) {
+            justify-content: space-between;
+            column-gap: rem(30);
+        }
+
+        @include respond('max', $tablet) {
+            flex-direction: column;
+            align-items: center;
+            row-gap: rem(50);
+        }
+
+        &-left {
+            display: flex;
+            column-gap: rem(60);
+
+            @include respond('max', $tablet) {
+                width: 100%;
+            }
+
+            @include respond('max', $mobile) {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: rem(40);
+            }
+
+            @include respond('max', $mobile) {
+                grid-template-columns: repeat(1, 1fr);
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        &-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            max-width: rem(calculate(400));
+            width: 100%;
+            row-gap: rem(20);
+
+            @include respond('max', $laptop) {
+                max-width: none;
+                width: 45%;
+            }
+
+            @include respond('max', $tablet) {
+                max-width: rem(calculate(400));
+
+                width: 100%;
+            }
+        }
+    }
+
+    &__title {
+        @include fluid-text(calculate(18), calculate(13));
+        color: var(--color-light);
+    }
+
+    &__group {
+        position: relative;
+
+        @include respond('max', $mobile-s) {
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(10);
+        }
+
+        .button {
+            background-color: var(--color-light);
+            color: var(--color-dark);
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            @include respond('max', $mobile-s) {
+                position: static;
+            }
+        }
+    }
+
+    &__input {
+        background-color: rgba(43, 46, 60, 1);
+        border-radius: rem(10);
+        border: none;
+        outline: none;
+        width: 100%;
+        padding: rem(18) rem(25);
+    }
+
+
+    &__bottom {
+        position: relative;
+
+        @include respond('min', $mobile) {
+
+            &::after,
+            &::before {
+                position: absolute;
+                content: '';
+                height: 2px;
+                top: 50%;
+                background-color: rgba(43, 46, 60, 1);
+            }
+
+            &::after {
+                width: 43%;
+                left: 0;
+            }
+
+            &::before {
+                right: 0;
+                width: 27%;
+                height: 2px;
+            }
+        }
+    }
+
+    &__content {
+        max-width: rem(calculate(780));
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 555;
+
+        @include respond('max', $mobile-s) {
+            flex-direction: column;
+            align-items: center;
+            row-gap: rem(20);
+        }
+    }
+
+    &__soc1als {
+        display: flex;
+        align-items: center;
+        column-gap: rem(25);
+        z-index: 555;
+
+        @include respond('min', $mobile-s) {
+            padding-right: rem(60);
+        }
+    }
+}

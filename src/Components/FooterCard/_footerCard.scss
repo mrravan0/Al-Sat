@@ -1,0 +1,26 @@
+@use '../../Scss-Sass/Helpers' as *;
+
+.footer {
+    &__card {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(10);
+        width: rem(calculate(230));
+
+        @include respond('max', $laptop) {
+            width: auto;
+        }
+    }
+
+    &__description {
+        @include fluid-text(calculate(16), calculate(13));
+        font-weight: 400;
+        color: var(--color-grey);
+        z-index: 555;
+
+        &:first-child {
+            @include fluid-text(calculate(18), calculate(13));
+            color: var(--color-light);
+        }
+    }
+}

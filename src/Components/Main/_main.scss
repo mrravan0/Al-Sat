@@ -1,0 +1,11 @@
+@use '../../Scss-Sass/Helpers' as *;
+
+.main {
+    @include respond('min', $mobile-s) {
+        background-image: url(../../Images/Search/blurGradient.png);
+        background-position-y: rem(-50);
+        background-position-x: rem(20);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}

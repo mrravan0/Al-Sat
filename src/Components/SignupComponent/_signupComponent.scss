@@ -1,0 +1,91 @@
+@use '../../Scss-Sass/Helpers' as *;
+
+.signup {
+    padding-block: rem(140) rem(80);
+
+    @include respond('max', $mobile) {
+        padding-top: rem(80);
+    }
+
+    &__wrapper,
+    &__box,
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__wrapper {
+        row-gap: rem(65);
+    }
+
+    &__title {
+        @include fluid-text(calculate(56), calculate(25));
+        font-weight: 700;
+        text-align: center;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        padding-block: rem(45) rem(80);
+        padding-inline: rem(20);
+        background-color: rgba(240, 242, 254, 1);
+    }
+
+    &__box {
+        max-width: rem(calculate(600));
+        row-gap: rem(65);
+        width: 100%;
+    }
+
+    &__form {
+        row-gap: rem(30);
+        align-items: center;
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(40);
+            width: 100%;
+        }
+
+        &-card {
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(20);
+        }
+
+        &-title {
+            @include fluid-text(calculate(24), calculate(16));
+            font-weight: 700;
+        }
+    }
+
+    &__finish {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(15);
+        text-align: center;
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(20);
+
+        &-text {
+            @include fluid-text(calculate(18), calculate(13));
+            font-weight: 400;
+        }
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-block: rem(20);
+        border-radius: rem(12);
+        border: 2px solid var(--color-dark);
+        column-gap: rem(20);
+    }
+}
