@@ -1,9 +1,9 @@
+import { Fragment } from "react";
 import FormInput from "../../Components/FormInput/FormInput";
-import Layout from "../../Components/Layout/Layout";
 import SignupComponent from "../../Components/SignupComponent/SignupComponent";
 const Login = () => {
     return (
-        <Layout>
+        <Fragment>
             <SignupComponent text={'Giriş'}>
                 <div className="signup__form-card">
                     <h2 className='signup__form-title'>Poçt adresiniz <span style={{ color: 'red' }}>*</span></h2>
@@ -14,7 +14,7 @@ const Login = () => {
                     <FormInput text={'Şifrəni daxil edin'} type={'password'} />
                 </div>
             </SignupComponent>
-        </Layout>
+        </Fragment>
     )
 }
 export default Login;
